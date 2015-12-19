@@ -9,4 +9,4 @@
  * Main module of the application.
  */
 angular
-  .module('demo2App', []);
+  .module('demo2App', ['ui.router']);
