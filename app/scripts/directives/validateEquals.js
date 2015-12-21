@@ -1,18 +1,12 @@
 'use strict';
 
-/**
- * @ngdoc directive
- * @name demo2App.directive:sameAs
- * @description
- * # sameAs
- */
 angular.module('demo2App')
   .directive('validateEquals', function () {
     return {
       require: 'ngModel',
         link: function(scope, element, attrs, ngModelCtrl) {
          function validateEquals(value){
-           var valid = (value === scope.scope.$eval(attrs.validateEquals));
+           var valid = (value === scope.$eval(attrs.validateEquals));
            ngModelCtrl.$setValidity('equal', valid);
            return valid ? value : undefined;
          }
