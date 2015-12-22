@@ -1,15 +1,18 @@
 'use strict';
 
-/**
- * @ngdoc function
- * @name demo2App.controller:RegisterCtrl
- * @description
- * # RegisterCtrl
- * Controller of the demo2App
- */
 angular.module('demo2App')
-  .controller('RegisterCtrl', function ($scope) {
+  .controller('RegisterCtrl', function ($scope, $rootScope, $http, alert) {
     $scope.submit = function(){
-      console.log("test");
-    }
+      
+      var url = '/';
+      var user = {};
+      
+      $http.post(url, user)
+        .success(function(res){
+          alert('success', 'OK!', 'You have registered successfully')
+        })
+        .error(function(err){
+          alert('warning', 'Oops!', 'Could not register')
+        });
+      }
   });
