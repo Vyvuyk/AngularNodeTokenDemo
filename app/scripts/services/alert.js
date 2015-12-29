@@ -5,7 +5,7 @@ angular.module('demo2App')
     var alertTimeout; 
     return function(type, title, message, timeout) {
       $rootScope.alert = {
-        hasBeenShow: true,
+        hasBeenShown: true,
         show: true,
         type: type,
         message: message,
